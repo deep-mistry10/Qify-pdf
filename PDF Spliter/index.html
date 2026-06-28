@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Splitter — QIFY</title>
+    <link rel="stylesheet" href="../common/layought.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+      <div id="header"></div>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="tool-page section">
+        <div class="container">
+            
+            <div class="tool-page-head">
+                <span class="section-kicker">PDF Tool</span>
+                <h1>PDF Splitter</h1>
+                <p>
+                    Split, extract, or pull pages from a PDF. Everything happens entirely in your browser. 
+                    No files ever leave your device, meaning maximum data privacy and instant speed.
+                </p>
+            </div>
+
+            <div class="tool-shell">
+                
+                <div class="tool-main-card">
+                    <h2>Configure Split</h2>
+                    <p class="tool-subtext">Upload your file and choose your desired breakdown method below.</p>
+                    
+                    <div id="dropzone" class="quality-box" style="text-align: center; cursor: pointer; border-style: dashed; padding: 40px 20px;">
+                        <h3 style="margin: 0 0 10px 0;">Drop a PDF here, or click to choose</h3>
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Only .pdf files are supported · Processed locally</p>
+                        <input type="file" id="fileInput" accept="application/pdf,.pdf" style="display: none;">
+                    </div>
+
+                    <div id="loadingRow" style="display: none; align-items: center; gap: 10px; margin-bottom: 18px; padding: 14px; background: var(--bg-alt); border: var(--border); border-radius: 12px; font-weight: bold;">
+                        <span class="spinner" style="display:inline-block; width:20px; height:20px; border:3px solid var(--text); border-top-color:transparent; border-radius:50%; animation: spin 1s linear infinite;"></span>
+                        <span id="loadingText">Loading PDF…</span>
+                    </div>
+                    
+                    <div id="errorBox" style="display: none; margin-bottom: 18px; padding: 14px; background: #ffe3e3; border: var(--border); border-radius: 12px; color: var(--red); font-weight: bold;"></div>
+
+                    <div id="docInfo" style="display: none; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; padding: 14px; background: #dff4ff; border: var(--border); border-radius: 18px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div>
+                                <div id="fName" style="font-weight: 800; word-break: break-all;">—</div>
+                                <div id="fSub" style="font-size: 0.85rem; font-weight: 600; opacity: 0.8;">—</div>
+                            </div>
+                        </div>
+                        <button class="btn" id="clearBtn" style="background: var(--red); min-height: 40px; padding: 0 14px; font-size: 13px;">✕ Remove file</button>
+                    </div>
+
+                    <div id="modeTabs" class="buttons" style="display: none; margin-bottom: 18px;">
+                        <button type="button" data-mode="every" class="active">Every page</button>
+                        <button type="button" data-mode="range">Extract range</button>
+                        <button type="button" data-mode="custom">Custom ranges</button>
+                        <button type="button" data-mode="select">Select visually</button>
+                    </div>
+
+                    <div id="controls" class="quality-box" style="display: none;">
+                        
+                        <div class="modePanel" id="panel-every">
+                            <p style="margin: 0; font-weight: 700;">Each page of the PDF will become its own separate PDF file.</p>
+                        </div>
+
+                        <div class="modePanel" id="panel-range" style="display:none;">
+                            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;">
+                                <label class="field-label" style="margin: 0;" for="rangeFrom">From page</label>
+                                <input type="number" id="rangeFrom" min="1" value="1" style="width: 80px; margin: 0; padding: 10px;">
+                                <label class="field-label" style="margin: 0;" for="rangeTo">to page</label>
+                                <input type="number" id="rangeTo" min="1" value="1" style="width: 80px; margin: 0; padding: 10px;">
+                            </div>
+                            <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Extracts one continuous block of pages into a single PDF.</p>
+                        </div>
+
+                        <div class="modePanel" id="panel-custom" style="display:none;">
+                            <label class="field-label" for="customRanges">Page ranges</label>
+                            <input type="text" id="customRanges" placeholder="e.g. 1-3, 5, 8-10" style="padding: 12px; margin-bottom: 14px;">
+                            <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Each comma-separated group becomes its own PDF file. Use a dash for ranges (e.g. "1-3") or single numbers (e.g. "5").</p>
+                        </div>
+
+                        <div class="modePanel" id="panel-select" style="display:none;">
+                            <div class="buttons" style="gap: 8px; margin-bottom: 14px;">
+                                <button type="button" id="selectAllBtn" style="min-height: 40px; padding: 5px; font-size: 13px;">Select all</button>
+                                <button type="button" id="selectNoneBtn" style="min-height: 40px; padding: 5px; font-size: 13px;">Clear selection</button>
+                                <button type="button" id="selectOddBtn" style="min-height: 40px; padding: 5px; font-size: 13px;">Odd pages</button>
+                                <button type="button" id="selectEvenBtn" style="min-height: 40px; padding: 5px; font-size: 13px;">Even pages</button>
+                            </div>
+                            
+                            <label class="field-label" for="selectOutputMode">Output Mode</label>
+                            <select id="selectOutputMode" style="width: 100%; padding: 12px; border: var(--border); border-radius: 12px; font-family: inherit; font-weight: 700; background: #fff; margin-bottom: 14px;">
+                                <option value="single">One PDF with selected pages</option>
+                                <option value="separate">Separate PDF per selected page</option>
+                            </select>
+                            <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Click thumbnails in the right panel to select the pages you want.</p>
+                        </div>
+                    </div>
+
+                    <div id="actionRow" style="display: none; flex-direction: column; gap: 10px; margin-top: 24px;">
+                        <button type="button" id="splitBtn" style="background: var(--yellow);">Split PDF</button>
+                        <div id="selCount" style="font-weight: 800; text-align: center; font-size: 0.95rem;"></div>
+                    </div>
+                </div>
+
+                <aside class="tool-preview-card">
+                    <div class="preview-card-top">
+                        <h3>Canvas & Output</h3>
+                        <p>Preview pages visually and retrieve your parsed output files directly.</p>
+                    </div>
+
+                    <div class="canvas-wrap">
+                        <div id="thumbGrid" style="display: none; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 14px; max-height: 400px; overflow-y: auto; padding-right: 8px;">
+                            </div>
+                        <div id="previewPlaceholder" style="text-align: center; padding: 20px; font-weight: 700;">
+                            <p style="margin: 0;">Upload a PDF to view page thumbnails.</p>
+                        </div>
+                    </div>
+
+                    <div id="results" class="side-note" style="display: none; margin-top: 24px;">
+                        <h4>Processing Complete!</h4>
+                        <p style="margin-bottom: 14px; font-weight: 600;">Your files are fully structured and ready for download.</p>
+                        
+                        <div id="resultList" style="margin-bottom: 18px; max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+                            </div>
+
+                        <div class="buttons" id="downloadAllRow" style="flex-direction: column; gap: 10px;">
+                            <button id="downloadAllBtn" style="background: var(--green); min-height: 48px;">⬇ Download all as .zip</button>
+                            <button id="startOverBtn" style="background: var(--card); min-height: 48px;">↺ Split another PDF</button>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+
+    <div id="footer"></div>
+    <script src="../common/common.js"></script>
+    <script src="../common/loader.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
