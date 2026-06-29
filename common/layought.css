@@ -996,3 +996,33 @@ button {
   }
 }
 
+.menu-close{
+    display:none;
+}
+
+@media (max-width:860px){
+
+.menu-close{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:48px;
+    height:48px;
+
+    margin-left:auto;
+
+    border:var(--border);
+    border-radius:14px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow-sm);
+
+    font-size:24px;
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+}

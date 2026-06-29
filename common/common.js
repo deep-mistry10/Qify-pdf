@@ -5,6 +5,15 @@ function initCommon() {
   // ==========================
   const menuBtn = document.getElementById("menuBtn");
   const navMenu = document.getElementById("navMenu");
+  const menuClose = document.getElementById("menuClose");
+
+if(menuClose && navMenu){
+
+    menuClose.onclick = () => {
+        navMenu.classList.remove("open");
+    };
+
+}
 
   if (menuBtn && navMenu) {
 
