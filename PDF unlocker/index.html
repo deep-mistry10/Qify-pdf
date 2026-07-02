@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QIFY - PDF Unlocker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../common/layout.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- floating shapes -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- MAIN TOOL PAGE -->
+  <main class="tool-page section">
+    <div class="container">
+
+      <!-- page heading -->
+      <div class="tool-page-head">
+        <span class="section-kicker">PDF TOOL</span>
+        <h1>PDF Unlocker</h1>
+        <p>Open a password protected PDF, preview it, and create an unlocked copy.</p>
+      </div>
+
+      <!-- tool layout -->
+      <div class="tool-shell">
+
+        <!-- LEFT: FORM -->
+        <section class="tool-main-card">
+          <h2>Unlock your PDF</h2>
+          <p class="tool-subtext">
+            Select a locked PDF file, enter its password, preview the first page, then export an unlocked copy.
+          </p>
+
+          <div class="tool-form">
+            <label class="field-label" for="pdfFile">Select PDF file</label>
+            <input type="file" id="pdfFile" accept=".pdf">
+
+            <label class="field-label" for="password">PDF password</label>
+<input
+  type="password"
+  id="password"
+  placeholder="Enter PDF password"
+/>
+
+<div class="buttons">
+              <button id="previewBtn" onclick="openPDF()">
+                Preview PDF
+              </button>
+
+              <button id="downloadBtn" onclick="downloadPDF()">
+                Download PDF
+              </button>
+            </div>
+
+            <div id="pdfInfo"></div>
+          </div>
+        </section>
+
+        <!-- RIGHT: PREVIEW / INFO -->
+        <aside class="tool-preview-card">
+          <div class="preview-card-top">
+            <h3>Preview</h3>
+            <p>After entering the correct password, the first page will appear here.</p>
+          </div>
+
+          <div class="canvas-wrap">
+            <canvas id="pdfCanvas"></canvas>
+          </div>
+
+          <div class="side-note">
+            <h4>How this works</h4>
+            <ul>
+              <li>Enter the correct PDF password</li>
+              <li>QIFY opens the file locally in your browser</li>
+              <li>You can preview the first page</li>
+              <li>Download creates a new unlocked PDF copy</li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script src="../common/common.js"></script>
+<script src="../common/loader.js"></script>
+
+<!-- Your page-specific JS -->
+  <script src="script.js"></script>
+</body>
+</html>

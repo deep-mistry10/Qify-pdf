@@ -1,0 +1,234 @@
+.tool-page-head {
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  display: inline-block;
+  padding: 8px 14px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 999px;
+  background: var(--card);
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.tool-page-head h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+}
+
+.tool-page-head p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+/* tool layout */
+.tool-shell {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tool-main-card,
+.tool-preview-card {
+  background: var(--card);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.tool-main-card h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.tool-subtext {
+  margin: 0 0 22px;
+  line-height: 1.7;
+}
+
+.field-label {
+  display: block;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.tool-form input {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 18px;
+  border: var(--border);
+  border-radius: 16px;
+  background: white;
+  color: var(--text);
+  font-size: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+input:focus {
+  outline: none;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #111;
+}
+
+input[type="file"] {
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  border: var(--border);
+  background: var(--yellow);
+  color: var(--text);
+  padding: 10px 16px;
+  margin-right: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  border-radius: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  flex: 1;
+  min-height: 58px;
+  padding: 16px;
+  border: var(--border);
+  border-radius: 16px;
+  color: black;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .15s;
+}
+
+#previewBtn {
+  background: var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+
+#downloadBtn {
+  background: var(--green);
+  box-shadow: var(--shadow-sm);
+}
+
+.buttons button:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0 #111;
+}
+
+.buttons button:active {
+  transform: translate(6px, 6px);
+  box-shadow: none;
+}
+
+/* pdf info */
+#pdfInfo {
+  display: none;
+  margin-top: 24px;
+  padding: 20px;
+  background: #dff4ff;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.filename {
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.info-row {
+  margin-bottom: 12px;
+}
+
+.info-row strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* preview side */
+.preview-card-top h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.preview-card-top p {
+  margin: 0 0 18px;
+  line-height: 1.7;
+}
+
+.canvas-wrap {
+  background: var(--bg-alt);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+#pdfCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: white;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 18px;
+  min-height: 200px;
+}
+
+.side-note {
+  margin-top: 18px;
+  background: var(--yellow);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.side-note h4 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.side-note ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .tool-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .tool-main-card,
+  .tool-preview-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width:700px){
+  .buttons{
+    flex-direction:column;
+  }
+}
