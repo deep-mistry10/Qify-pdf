@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger — QIFY</title>
+    <link rel="stylesheet" href="../common/layout.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div id="header"></div>
+
+    <main class="tool-page section">
+        <div class="container">
+            
+            <div class="tool-page-head">
+                <span class="section-kicker">PDF Tool</span>
+                <h1>PDF Merger</h1>
+                <p>
+                    Combine multiple PDF files into a single document instantly. Everything happens entirely in your browser. 
+                    No files ever leave your device, ensuring total privacy and security.
+                </p>
+            </div>
+
+            <div class="tool-shell">
+                
+                <div class="tool-main-card">
+                    <h2>Select & Order PDFs</h2>
+                    <p class="tool-subtext">Upload the files you want to combine. You can add multiple files at once.</p>
+                    
+                    <div id="dropzone" class="quality-box" style="text-align: center; cursor: pointer; border-style: dashed; padding: 40px 20px; margin-bottom: 20px;">
+                        <h3 style="margin: 0 0 10px 0;">Drop PDFs here, or click to choose</h3>
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Select 2 or more files to merge them together</p>
+                        <input type="file" id="fileInput" accept="application/pdf,.pdf" multiple style="display: none;">
+                    </div>
+
+                    <div id="errorBox" style="display: none; margin-bottom: 18px; padding: 14px; background: #ffe3e3; border: var(--border); border-radius: 12px; color: var(--red); font-weight: bold;"></div>
+
+                    <div id="fileListContainer" style="display: none; margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+                            <h4 style="margin: 0;">Files to Merge</h4>
+                            <span style="font-size: 0.85rem; opacity: 0.7; font-weight: 600;">(Top to bottom order)</span>
+                        </div>
+                        
+                        <div id="fileList" style="display: flex; flex-direction: column; gap: 10px; max-height: 350px; overflow-y: auto; padding-right: 8px; margin-bottom: 14px;">
+                            </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                            <button type="button" id="addMoreBtn" class="btn" style="background: var(--bg-alt); padding: 8px 14px; font-size: 13px;">+ Add More Files</button>
+                            <button type="button" id="clearAllBtn" class="btn" style="background: var(--red); padding: 8px 14px; font-size: 13px;">✕ Clear All</button>
+                        </div>
+                    </div>
+
+                    <div id="actionRow" style="display: none; margin-top: 24px; padding-top: 24px; border-top: 2px dashed #e0e0e0;">
+                        <button type="button" id="mergeBtn" style="background: var(--blue); width: 100%;">Merge PDFs</button>
+                        <div id="statusText" style="font-weight: 800; text-align: center; margin-top: 10px; font-size: 0.95rem; display: none;">⏳ Combining files...</div>
+                    </div>
+                </div>
+
+                <aside class="tool-preview-card">
+                    <div class="preview-card-top">
+                        <h3>Output Status</h3>
+                        <p>Review your progress and retrieve your newly merged document.</p>
+                    </div>
+
+                    <div class="canvas-wrap" id="preMergeState">
+                        <div style="text-align: center; padding: 30px 20px; font-weight: 700; color: #555;">
+                            <p style="margin: 0;">Add at least two PDF files to enable the merging engine.</p>
+                        </div>
+                    </div>
+
+                    <div id="results" class="side-note" style="display: none; margin-top: 0;">
+                        <h4>Merge Complete!</h4>
+                        <p style="margin-bottom: 16px; font-weight: 600;">Your documents have been successfully combined.</p>
+                        
+                        <div class="resultItem" style="margin-bottom: 20px;">
+                            <div class="rInfo">
+                                <div>
+                                    <div class="rName" id="mergedFileName">merged_document.pdf</div>
+                                    <div class="rMeta" id="mergedFileMeta">Ready for download</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttons" style="flex-direction: column; gap: 12px;">
+                            <button id="downloadBtn" style="background: var(--green); min-height: 48px; width: 100%;">⬇ Download Merged PDF</button>
+                            <button id="startOverBtn" style="background: var(--card); min-height: 48px; width: 100%;">↺ Merge More Files</button>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../common/common.js"></script>
+    <script src="../common/loader.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JPEG</title>
+    <link rel="stylesheet" href="../common/layout.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div id="header"></div>
+
+    <main class="tool-page section">
+        <div class="container">
+            <div class="tool-page-head">
+    <span class="section-kicker">PDF Tool</span>
+
+    <h1>PDF to JPEG</h1>
+
+    <p>
+        Convert PDF pages into high-quality JPEG images directly in your browser.
+        Your files never leave your device.
+    </p>
+</div>
+
+            <div class="tool-shell">
+                <section class="tool-main-card">
+                    <h2>Convert PDF</h2>
+                    <p class="tool-subtext">Upload a PDF and download the current page, selected pages, or every page as JPEG images.</p>
+
+                    <label for="fileInput" class="field-label">Select PDF</label>
+                    <input type="file" id="fileInput" accept="application/pdf">
+
+                    <div id="pdfControls" class="hidden">
+                        <div class="canvas-wrap info-box">
+                            <p><strong>File:</strong> <span id="fileName">-</span></p>
+                            <p><strong>Total Pages:</strong> <span id="totalPages">-</span></p>
+                        </div>
+
+                        <label for="pageSelect" class="field-label">Select Pages</label>
+                        <select id="pageSelect" multiple size="6"></select>
+                        
+                        <p class="hint-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple pages.</p>
+
+                        <button id="btnCurrent" class="primary-btn">Download Current Page</button>
+                        <button id="btnSelected" class="primary-btn">Download Selected Pages</button>
+                        <button id="btnAll" class="primary-btn">Download All Pages</button>
+                    </div>
+
+                    <div id="errorBox" class="error hidden"></div>
+                </section>
+
+                <aside class="tool-preview-card">
+                    <div class="preview-card-top">
+                        <h3>Preview</h3>
+                        <p>Browse your PDF before downloading.</p>
+                    </div>
+
+                    <div class="canvas-wrap">
+                        <canvas id="pdfCanvas"></canvas>
+                    </div>
+
+                    <div class="nav" id="previewNav">
+                        <button id="prevBtn" class="nav-btn">◀ Prev</button>
+                        <span id="pageIndicator">Page 0 / 0</span>
+                        <button id="nextBtn" class="nav-btn">Next ▶</button>
+                    </div>
+
+                    <div class="side-note">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>High-quality JPEG export</li>
+                            <li>Download the current page</li>
+                            <li>Select multiple pages</li>
+                            <li>Download all pages as ZIP</li>
+                            <li>100% client-side processing</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../common/common.js"></script>
+    <script src="../common/loader.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

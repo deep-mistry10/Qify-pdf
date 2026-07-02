@@ -1,3 +1,17 @@
+.tool-page-head {
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  display: inline-block;
+  padding: 8px 14px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 999px;
+  background: var(--card);
+  font-weight: 900;
+  margin-bottom: 14px;
+}
 
 .tool-page-head h1 {
   margin: 0 0 12px;

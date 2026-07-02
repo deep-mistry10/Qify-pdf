@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QIFY - All-in-One Print Tool</title>
+  <title>QIFY - All-in-One PDF & Image Editor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Floating shapes -->
   <div class="bg-shape shape-1"></div>
   <div class="bg-shape shape-2"></div>
   <div class="bg-shape shape-3"></div>
 
-
   <div id="header"></div>
   <main>
-    <!-- HERO -->
     <section class="hero section">
       <div class="container hero-grid">
         <div class="hero-left">
           <div class="tag">
             <span class="tag-dot"></span>
-            All-in-One Tool For Photo & PDF
+            Professional PDF & Photo Suite
           </div>
 
           <h1>
@@ -33,8 +30,8 @@
           </h1>
 
           <p class="hero-text">
-            A modern tool for quick PDF Editing, printing, photo printing, page setup,
-            preview, scaling, fit/crop, and simple mobile-friendly workflow.
+            A modern tool for PDF editing, photo manipulation, file conversion, 
+            resizing, cropping, filters, and a simple mobile-friendly workflow.
           </p>
 
           <div class="hero-actions">
@@ -45,11 +42,11 @@
           <div class="hero-stats">
             <div class="stat-card">
               <strong>PDF</strong>
-              <span>Print & Preview</span>
+              <span>Merge & Edit</span>
             </div>
             <div class="stat-card">
               <strong>Photo</strong>
-              <span>Fit / Fill / Crop</span>
+              <span>Crop & Enhance</span>
             </div>
             <div class="stat-card">
               <strong>Mobile</strong>
@@ -70,11 +67,11 @@
             <div class="app-body">
               <aside class="mock-sidebar">
                 <div class="mock-title">Tools</div>
-                <button class="mock-tool active">PDF Print</button>
-                <button class="mock-tool">Photo Print</button>
-                <button class="mock-tool">Passport Photo</button>
-                <button class="mock-tool">A4 Layout</button>
-                <button class="mock-tool">Quick Print</button>
+                <button class="mock-tool active">PDF Merge</button>
+                <button class="mock-tool">Photo Resize</button>
+                <button class="mock-tool">Image Filters</button>
+                <button class="mock-tool">PDF Split</button>
+                <button class="mock-tool">Quick Edit</button>
               </aside>
 
               <div class="mock-preview">
@@ -91,23 +88,11 @@
               <aside class="mock-settings">
                 <div class="settings-card">
                   <h4>Settings</h4>
-                  <div class="setting-row">
-                    <span>Paper</span>
-                    <b>A4</b>
-                  </div>
-                  <div class="setting-row">
-                    <span>Color</span>
-                    <b>Color</b>
-                  </div>
-                  <div class="setting-row">
-                    <span>Scale</span>
-                    <b>Fit</b>
-                  </div>
-                  <div class="setting-row">
-                    <span>Copies</span>
-                    <b>1</b>
-                  </div>
-                  <button class="mock-print-btn">Print Now</button>
+                  <div class="setting-row"><span>Format</span> <b>PNG</b></div>
+                  <div class="setting-row"><span>Quality</span> <b>High</b></div>
+                  <div class="setting-row"><span>Scale</span> <b>Auto</b></div>
+                  <div class="setting-row"><span>Copies</span> <b>1</b></div>
+                  <button class="mock-print-btn">Process Now</button>
                 </div>
               </aside>
             </div>
@@ -116,112 +101,103 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
     <section class="section" id="features">
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">FEATURES</span>
-          <h2>Everything you need in one print workspace</h2>
-          <p>
-            Built for print shops, home users, students, and anyone who wants
-            a clean way to print files without extra confusion.
-          </p>
+          <h2>Everything you need in one editor</h2>
+          <p>Built for creators, professionals, and students who want a clean, fast way to edit files without confusion.</p>
         </div>
 
         <div class="features-grid">
           <article class="feature-card card-yellow tilt">
             <div class="feature-icon">📄</div>
-            <h3>PDF Printing</h3>
-            <p>Upload PDF files, preview pages, and print exactly what you see.</p>
+            <h3>PDF Editing</h3>
+            <p>Upload, merge, split, and manage your PDF files with ease.</p>
           </article>
 
           <article class="feature-card card-blue tilt">
             <div class="feature-icon">🖼️</div>
-            <h3>Photo Printing</h3>
-            <p>Print JPG and PNG images with fit, fill, crop, and alignment options.</p>
+            <h3>Photo Editing</h3>
+            <p>Modify JPG and PNG images with crop, filter, and resize options.</p>
           </article>
 
           <article class="feature-card card-pink tilt">
             <div class="feature-icon">📐</div>
-            <h3>Page Setup</h3>
-            <p>Choose A4, custom size, orientation, margins, and scale settings.</p>
+            <h3>Page Layout</h3>
+            <p>Choose custom dimensions, orientation, and scaling settings.</p>
           </article>
 
           <article class="feature-card card-green tilt">
             <div class="feature-icon">⚡</div>
-            <h3>Quick Print</h3>
-            <p>Fast workflow for simple prints when you don’t need extra editing.</p>
+            <h3>Quick Edit</h3>
+            <p>Fast workflow for simple modifications when time is limited.</p>
           </article>
 
           <article class="feature-card card-orange tilt">
             <div class="feature-icon">📱</div>
             <h3>Mobile Friendly</h3>
-            <p>Use it on phone or desktop with a touch-friendly layout.</p>
+            <p>Use it on mobile or desktop with a fully responsive layout.</p>
           </article>
 
           <article class="feature-card card-white tilt">
             <div class="feature-icon">🎛️</div>
             <h3>Simple Controls</h3>
-            <p>Clean print options for copies, color mode, preview, and layout.</p>
+            <p>Clean interface for quality, format, preview, and output.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- WORKFLOW -->
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">WORKFLOW</span>
           <h2>How it works</h2>
-          <p>Simple 4-step flow so printing feels fast and predictable.</p>
+          <p>A simple 4-step flow to make editing feel fast and predictable.</p>
         </div>
 
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-number">1</div>
             <h3>Upload File</h3>
-            <p>Choose PDF, photo, or document file from your device.</p>
+            <p>Choose a PDF, image, or document from your device.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">2</div>
             <h3>Preview</h3>
-            <p>Check pages, image placement, scaling, and page orientation.</p>
+            <p>Check your changes, image placement, and edits in real-time.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">3</div>
-            <h3>Adjust Settings</h3>
-            <p>Pick paper size, copies, fit mode, margins, and print options.</p>
+            <h3>Adjust</h3>
+            <p>Pick your output format, quality, size, and export options.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">4</div>
-            <h3>Print</h3>
-            <p>Open the print dialog and send the file to your connected printer.</p>
+            <h3>Process</h3>
+            <p>Apply your changes and download the processed file instantly.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY -->
     <section class="section" id="why">
       <div class="container">
         <div class="why-box">
           <div class="why-left">
             <span class="section-kicker">WHY QIFY</span>
-            <h2>Made for real printing workflow</h2>
-            <p>
-              Instead of using random apps for PDF, photos, page setup, and preview,
-              QIFY brings the main print workflow into one place.
-            </p>
+            <h2>Made for real editing workflows</h2>
+            <p>Instead of using random apps for PDF, photos, and file conversion, QIFY brings the main editing suite into one place.</p>
 
             <ul class="why-list">
-              <li>✔ One tool for PDF + photo printing</li>
-              <li>✔ Cleaner preview before printing</li>
-              <li>✔ Good base for future features like ID card / passport photo / batch print</li>
-              <li>✔ Easy to expand into a full print shop app later</li>
+              <li>✔ Unified tool for PDF + photo editing</li>
+              <li>✔ Cleaner preview before processing</li>
+              <li>✔ Perfect base for advanced filters and batch tasks</li>
+              <li>✔ Easy to expand into a professional suite</li>
             </ul>
           </div>
 
@@ -229,8 +205,8 @@
             <div class="mini-board">
               <div class="mini-chip chip-yellow">PDF</div>
               <div class="mini-chip chip-blue">PHOTO</div>
-              <div class="mini-chip chip-pink">A4</div>
-              <div class="mini-chip chip-green">PRINT</div>
+              <div class="mini-chip chip-pink">EDIT</div>
+              <div class="mini-chip chip-green">SAVE</div>
               <div class="mini-chip chip-orange">MOBILE</div>
               <div class="mini-chip chip-white">TOOLS</div>
             </div>
@@ -239,50 +215,42 @@
       </div>
     </section>
 
-    <!-- PREVIEW -->
     <section class="section" id="preview">
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">APP PREVIEW</span>
           <h2>A bold workspace layout</h2>
-          <p>
-            This landing page preview is designed to match the kind of print tool
-            dashboard you can build next.
-          </p>
+          <p>This workspace is designed to match the professional editing dashboard you are building.</p>
         </div>
 
         <div class="preview-grid">
           <div class="preview-box preview-big">
             <h3>Left panel</h3>
-            <p>File upload, print type, quick actions, templates, and tools.</p>
+            <p>Upload, select tool, quick actions, and templates.</p>
           </div>
           <div class="preview-box preview-mid">
             <h3>Center preview</h3>
-            <p>PDF pages, photo crop preview, margins, paper layout, and zoom.</p>
+            <p>File content, crop preview, filters, and zoom controls.</p>
           </div>
           <div class="preview-box preview-small">
             <h3>Right panel</h3>
-            <p>Print settings, paper size, copies, fit/fill, and printer actions.</p>
+            <p>Export settings, file format, quality, and processing.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="section cta-section" id="cta">
       <div class="container">
         <div class="cta-box">
           <div>
             <span class="section-kicker">READY TO BUILD?</span>
-            <h2>Start with this landing page, then connect your real print app.</h2>
-            <p>
-              You can use this as the homepage for your Print Studio project and
-              later link it to your PDF print web app, photo print tools, and editor pages.
-            </p>
+            <h2>Start with this interface and connect your tools.</h2>
+            <p>You can use this as the hub for your QIFY project and later link it to your PDF engine, photo processors, and API tools.</p>
           </div>
 
           <div class="cta-actions">
-            <a href="#" class="btn btn-primary">Launch App</a>
+            <a href="#" class="btn btn-primary">Launch Editor</a>
             <a href="#features" class="btn btn-secondary">Explore Features</a>
           </div>
         </div>
@@ -290,12 +258,9 @@
     </section>
   </main>
 
-
   <div id="footer"></div>
   <script src="/common/common.js"></script>
-<script src="/common/loader.js"></script>
-
-<!-- Your page-specific JS -->
+  <script src="/common/loader.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
