@@ -1,0 +1,160 @@
+/* ==========================================================================
+   TOOLS PAGE (Mapped to global style.css)
+   ========================================================================== */
+
+/* Header Section */
+.tools-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Reusing your global section-kicker styling for consistency */
+.tools-header .section-kicker {
+  display: inline-block;
+  padding: 8px 14px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 999px;
+  background: var(--card);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.tools-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  line-height: 1.02;
+}
+
+.tools-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Filters */
+.tools-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--card);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+
+.filter-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+.filter-btn.active {
+  background-color: var(--yellow);
+}
+
+/* Grid Layout */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+/* Tool Cards - White (var(--card)), Brutalist Borders, Hard Shadows */
+.tool-card {
+  background: var(--card);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease;
+}
+
+.tool-card:hover {
+  transform: translate(-4px, -4px);
+}
+
+/* SVG Icons - Seamless */
+.tool-icon {
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.tool-icon svg {
+  width: 42px;
+  height: 42px;
+  stroke-width: 2.5; /* Slightly thicker to match the bold font */
+}
+
+/* Typography inside cards */
+.tool-card h3 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin: 0 0 12px 0;
+}
+
+.tool-card p {
+  font-size: 0.95rem;
+  margin: 0 0 24px 0;
+  line-height: 1.7;
+  flex-grow: 1;
+  opacity: 0.9;
+}
+
+/* Action Area */
+.tool-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.tool-action span {
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover .tool-action span {
+  transform: translateX(6px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tools-header h1 {
+    font-size: 2.1rem;
+  }
+  
+  .tools-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .filter-btn {
+    white-space: nowrap;
+  }
+  
+  .tool-card {
+    padding: 18px;
+  }
+}

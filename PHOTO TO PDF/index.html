@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images to PDF</title>
+    <link rel="stylesheet" href="../common/layout.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div id="header"></div>
+
+    <main class="tool-page section">
+        <div class="container">
+            
+            <div class="tool-page-head">
+                <span class="section-kicker">PDF Tool</span>
+                <h1>Images to PDF</h1>
+                <p>
+                    Turn your JPGs, JPEGs, and PNGs into a clean, unified A4 PDF document right in your browser. 
+                    Your privacy is guaranteed—images never touch a server.
+                </p>
+            </div>
+
+            <div class="tool-shell">
+                
+                <section class="tool-main-card">
+                    <h2>Convert Images</h2>
+                    <p class="tool-subtext">Upload your photos, arrange them into pages, and download your compiled PDF.</p>
+
+                    <input type="file" id="file-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple hidden />
+
+                    <div id="dropzone" class="pressroom-dropzone" tabindex="0" role="button" aria-label="Upload images by dropping them here or clicking to browse">
+                        <div class="dropzone-content">
+                            <svg class="dropzone-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" width="40" height="40">
+                                <path d="M24 6v24m0-24 9 9m-9-9-9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 32v6a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4v-6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="dropzone-title">Drag photos here</p>
+                            <p class="dropzone-sub">or <button type="button" id="browse-btn" class="link-btn">browse your files</button></p>
+                        </div>
+                    </div>
+
+                    <div id="action-bar" class="action-panel" hidden>
+                        <div class="action-status" id="action-status" aria-live="polite"></div>
+                        
+                        <div class="action-buttons">
+                            <button type="button" id="convert-btn" class="primary-btn">Convert to PDF</button>
+                            <button type="button" id="download-btn" class="primary-btn" disabled>Download PDF</button>
+                            <button type="button" id="clear-btn" class="nav-btn-clear">Clear All Pages</button>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="tool-preview-card">
+                    <section id="tray-section" class="tray-section" hidden>
+                        <div class="preview-card-top">
+                            <h3>Page Order <span id="page-count"></span></h3>
+                            <p class="hint-text">Drag cards to reorder. Each card represents a single A4 page in the final document.</p>
+                        </div>
+                    </section>
+
+                    <ul id="tray" class="pressroom-tray" aria-label="Image pages in order"></ul>
+
+                    <div class="side-note" style="margin-top: 20px;">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Automatic A4 orientation formatting</li>
+                            <li>Interactive drag-and-drop page arranging</li>
+                            <li>Supports raw JPG, JPEG, and PNG formats</li>
+                            <li>100% private, local client-side processing</li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="loading-overlay" class="loading-overlay" hidden aria-live="assertive" role="status">
+        <div class="loading-card">
+            <div class="spinner" aria-hidden="true"></div>
+            <p id="loading-text">Building your PDF…</p>
+            <div class="progress-track">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast-notification" hidden></div>
+
+    <div id="footer"></div>
+
+    <script src="../common/common.js"></script>
+    <script src="../common/loader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+html {
+    scroll-behavior: smooth;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Page Heading Layout --- */
+.tool-page-head {
+    margin-bottom: 28px;
+    text-align: left;
+    max-width: 760px;
+}
+
+.tool-page-head h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1;
+}
+
+.tool-page-head p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.section-kicker {
+    display: inline-block;
+    padding: 8px 14px;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    border-radius: 999px;
+    background: var(--card);
+    font-weight: 900;
+    margin-bottom: 14px;
+}
+
+/* --- Tool Base Grid Shell --- */
+.tool-shell {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.tool-main-card,
+.tool-preview-card {
+    background: var(--card);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 28px;
+    padding: 28px;
+}
+
+.tool-main-card h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.tool-subtext {
+    margin: 0 0 22px;
+    line-height: 1.7;
+}
+
+/* --- Interactive Elements & Buttons --- */
+.primary-btn {
+    width: 100%;
+    min-height: 58px;
+    padding: 16px;
+    border: var(--border);
+    border-radius: 16px;
+    background: var(--yellow);
+    color: #111;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: .15s;
+    margin-bottom: 12px;
+}
+
+.primary-btn:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #111;
+}
+
+.primary-btn:active {
+    transform: translate(6px, 6px);
+}
+
+/* Distinctive Neo-Brutalist styling variants for Action Bar components */
+.accent-download {
+    background: #a3e635 !important; /* Muted bright green accent for download action completion */
+}
+
+.nav-btn-clear {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    border-radius: 14px;
+    background: #ffb4b4;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.nav-btn-clear:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0 #111;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* --- Custom Integration Components --- */
+
+/* Drag and Drop Zone */
+.pressroom-dropzone {
+    border: 3px dashed #111;
+    border-radius: 20px;
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background 0.15s ease, transform 0.15s ease;
+    margin-bottom: 20px;
+}
+
+.pressroom-dropzone:focus-visible {
+    outline: 3px solid var(--yellow);
+}
+
+.pressroom-dropzone.drag-over {
+    background: var(--bg-alt);
+    transform: translate(2px, 2px);
+}
+
+.dropzone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropzone-icon {
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.dropzone-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.dropzone-sub {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #111;
+    font: inherit;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Dynamic Action Bar Panel */
+.action-panel {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #111;
+}
+
+.action-status {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    min-height: 1.2em;
+}
+
+/* --- Right Preview Column Elements --- */
+.preview-card-top h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-count-badge {
+    font-size: 0.85rem;
+    background: #111;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.hint-text {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+/* Sorting Tray UI */
+.pressroom-tray {
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 16px;
+    background: var(--bg-alt);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 16px;
+    min-height: 150px;
+}
+
+#previewPlaceholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+/* Single Thumbnail Page Cards */
+.tray-card {
+    position: relative;
+    background: white;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    border-radius: 14px;
+    padding: 8px 8px 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: grab;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.tray-card:active {
+    cursor: grabbing;
+}
+
+.tray-card.dragging {
+    opacity: 0.4;
+}
+
+.tray-card.drag-over-before {
+    border-left: 5px solid var(--yellow);
+}
+
+.tray-card.drag-over-after {
+    border-right: 5px solid var(--yellow);
+}
+
+.tray-thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.414; 
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f3f3;
+    border: 1px solid #111;
+}
+
+.tray-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.page-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #111;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 900;
+    border-radius: 6px;
+    padding: 2px 6px;
+    border: 1px solid white;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background: #ffb4b4;
+    color: #111;
+    font-size: 0.8rem;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.1s;
+}
+
+.remove-btn:hover {
+    background: #ff7e7e;
+}
+
+.tray-filename {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* Features Side Note Block */
+.side-note {
+    background: var(--yellow);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    border-radius: 20px;
+    padding: 18px;
+}
+
+.side-note h4 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+.side-note ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+    display: none;
+}
+
+.loading-card {
+    background: var(--card);
+    border: var(--border);
+    border-radius: 24px;
+    padding: 32px;
+    text-align: center;
+    width: min(320px, 100%);
+    box-shadow: var(--shadow);
+    display: none;
+}
+
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid var(--bg-alt);
+    border-top-color: var(--yellow);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { 
+    to { transform: rotate(360deg); } 
+}
+
+#loading-text {
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.progress-track {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--bg-alt);
+    border: 1px solid #111;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--yellow);
+    transition: width 0.2s ease;
+}
+
+/* Toast Floating Element */
+.toast-notification {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    background: #111;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+    z-index: 110;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1100px) {
+    .tool-shell {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .pressroom-tray {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+}
