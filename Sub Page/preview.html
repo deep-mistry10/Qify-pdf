@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workspace Preview - QIFY</title>
+  
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../common/layout.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Page Specific Styles -->
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+
+  <!-- Background Shapes -->
+  <div class="bg-shape shape-3" style="top: 15%; left: -20px;"></div>
+  <div class="bg-shape shape-2" style="bottom: 10%; right: 5%;"></div>
+  
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+  
+  <main class="container section">
+    
+    <!-- Hero Section -->
+    <div class="preview-header section-head">
+      <span class="section-kicker">Interactive Demo</span>
+      <h1>Inside the Workspace.</h1>
+      <p>No clunky interfaces. No confusing menus. Just a clean, distraction-free environment designed to help you edit your documents faster.</p>
+    </div>
+
+    <!-- The Interactive App Mockup (Using your native style.css classes!) -->
+    <div class="mockup-wrapper">
+      <div class="app-card">
+        
+        <!-- Mac-style Topbar -->
+        <div class="app-topbar">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <p>QIFY Workspace - Merge PDF</p>
+        </div>
+        
+        <!-- App Body Layout -->
+        <div class="app-body">
+          
+          <!-- Left Sidebar -->
+          <div class="mock-sidebar">
+            <h4 class="mock-title">Active Tools</h4>
+            <div class="mock-tool active">Merge PDF</div>
+            <div class="mock-tool">Compress PDF</div>
+            <div class="mock-tool">Add Watermark</div>
+            <div class="mock-tool">Unlock PDF</div>
+          </div>
+          
+          <!-- Center Canvas Preview -->
+          <div class="mock-preview">
+            <div class="preview-paper">
+              <div class="preview-paper-header"></div>
+              <div class="preview-image-block"></div>
+              <div class="preview-paper-line"></div>
+              <div class="preview-paper-line"></div>
+              <div class="preview-paper-line short"></div>
+            </div>
+          </div>
+          
+          <!-- Right Settings Panel -->
+          <div class="mock-settings">
+            <h4 class="mock-title">Export Settings</h4>
+            <div class="settings-card">
+              <div class="setting-row">
+                <span>Format</span>
+                <strong>PDF</strong>
+              </div>
+              <div class="setting-row">
+                <span>Quality</span>
+                <strong>High (Print)</strong>
+              </div>
+              <div class="setting-row">
+                <span>Pages</span>
+                <strong>All Pages</strong>
+              </div>
+              <button class="mock-print-btn">Process Files</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Grid Features -->
+    <div class="preview-features">
+      <div class="section-head" style="margin-bottom: 40px;">
+        <h2>Everything at a glance.</h2>
+      </div>
+      
+      <div class="preview-grid">
+        
+        <div class="preview-box preview-big card-yellow">
+          <h3>Drag & Drop Canvas</h3>
+          <p>Instantly reorder pages, rotate images, or delete unwanted sections using our fluid drag-and-drop workspace.</p>
+        </div>
+        
+        <div class="preview-box preview-mid card-blue">
+          <h3>Real-time Preview</h3>
+          <p>See exactly what your final document will look like before you export it. No guessing required.</p>
+        </div>
+        
+        <div class="preview-box preview-small card-pink">
+          <h3>One-Click Export</h3>
+          <p>Hit process and your file downloads instantly directly from your browser's memory.</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-box preview-cta">
+      <div>
+        <h2>Experience it yourself.</h2>
+        <p>Try the workspace right now. No signup required.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="/All tools page/toolspage.html" class="btn btn-secondary">Open Workspace <span>→</span></a>
+      </div>
+    </div>
+
+  </main>
+  
+  <!-- Footer & Scripts -->
+  <div id="footer"></div>
+  <script src="../common/common.js"></script>
+  <script src="../common/loader.js"></script>
+</body>
+</html>

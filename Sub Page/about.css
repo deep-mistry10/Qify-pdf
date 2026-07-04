@@ -1,0 +1,54 @@
+
+.about-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  line-height: 1.02;
+}
+
+.about-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.about-story {
+  margin-bottom: 60px;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-stats .stat-card {
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.18s ease;
+}
+
+.about-stats .stat-card:hover {
+  transform: translate(-4px, -4px);
+}
+
+.about-stats strong {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Inherits your native .feature-card from style.css perfectly */
+.feature-card {
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: transform 0.18s ease;
+  background-color: white;
+}

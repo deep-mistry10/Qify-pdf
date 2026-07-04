@@ -1,0 +1,72 @@
+/* ==========================================================================
+   PREVIEW / WORKSPACE PAGE
+   ========================================================================== */
+
+.preview-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.preview-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  line-height: 1.02;
+}
+
+.preview-header p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Wrapper to give the Mockup App room to breathe */
+.mockup-wrapper {
+  margin: 0 auto 80px;
+  max-width: 1000px;
+  /* Adds a subtle pulsing glow behind the mockup */
+  position: relative;
+}
+
+.mockup-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--blue);
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Ensure the app card stays above the glow */
+.app-card {
+  z-index: 2;
+  position: relative;
+}
+
+/* Enhancing the preview grid layout spacing */
+.preview-features {
+  margin-bottom: 80px;
+  padding-top: 40px;
+  border-top: 4px dashed var(--text);
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.18s ease;
+}
+
+.preview-box:hover {
+  transform: translate(-4px, -4px);
+}
+
+.preview-cta {
+  margin-top: 60px;
+}

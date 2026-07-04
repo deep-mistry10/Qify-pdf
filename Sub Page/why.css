@@ -1,0 +1,212 @@
+/* ==========================================================================
+   WHY US PAGE
+   ========================================================================== */
+
+.why-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.why-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  line-height: 1.02;
+}
+
+.why-header p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Comparison Grid (The Old Way vs QIFY) */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.compare-card {
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-old {
+  background: var(--bg-alt);
+  opacity: 0.9;
+}
+
+.card-new {
+  transform: scale(1.02); /* Slightly emphasizes the QIFY card */
+  z-index: 2;
+}
+
+.compare-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 3px dashed var(--text);
+  padding-bottom: 20px;
+}
+
+.compare-icon {
+  width: 56px;
+  height: 56px;
+  border: var(--border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  color: var(--text);
+}
+
+.compare-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.compare-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.compare-list li {
+  position: relative;
+  padding-left: 36px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Custom Checkmarks & Crosses for the lists */
+.card-old .compare-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--card);
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: var(--red);
+}
+
+.card-new .compare-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--card);
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: var(--green);
+}
+
+/* Deep Dive Features */
+.features-deep-dive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.dive-box {
+  background: var(--card);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+  padding: 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.18s ease;
+}
+
+.dive-box:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow);
+}
+
+.dive-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border: var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+.dive-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.dive-box h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.dive-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Make CTA look cohesive on this page */
+.why-cta {
+  margin-top: 40px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .comparison-grid, 
+  .features-deep-dive {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-new {
+    transform: scale(1); /* Remove scale on mobile so it doesn't break layout */
+  }
+
+  .dive-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
