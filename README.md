@@ -106,7 +106,7 @@ For Visual Studio Code users:
 
 ## Live Demo
 
-https://qify-site.netlify.app/
+https://qify-pdf.netlify.app/
 
 ---
 
