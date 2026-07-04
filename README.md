@@ -5,7 +5,7 @@
 Modern, fast, and privacy-focused PDF tools built with HTML, CSS, and JavaScript.
 
 <p>
-  <a href="https://qify-pdf.netlify.app/">Live Demo</a> •
+  <a href="https://pdf.qify.site">Live Demo</a> •
   <a href="https://github.com/deep-mistry10/Qify-pdf/issues">Report Bug</a> •
   <a href="https://github.com/deep-mistry10/Qify-pdf/issues">Request Feature</a>
 </p>
@@ -106,7 +106,7 @@ For Visual Studio Code users:
 
 ## Live Demo
 
-https://qify-pdf.netlify.app/
+https://pdf.qify.site
 
 ---
 
