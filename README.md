@@ -164,4 +164,4 @@ See the [LICENSE](LICENSE) file for more information.
 
 GitHub: https://github.com/deep-mistry10
 
-Website: https://qify-site.netlify.app/
+Website: https://pdf.qify.site
