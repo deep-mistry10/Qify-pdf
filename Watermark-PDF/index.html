@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Watermark</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<link rel="stylesheet" href="../common/layout.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-shape shape-1"></div>
+<div class="bg-shape shape-2"></div>
+<div class="bg-shape shape-3"></div>
+
+<div id="header"></div>
+
+<main class="tool-page section">
+<div class="container">
+
+<div class="tool-page-head">
+    <span class="section-kicker">PDF Tool</span>
+
+    <h1>PDF Watermark</h1>
+
+    <p>
+        Add text or image watermarks directly in your browser.
+        Your PDF never leaves your device.
+    </p>
+</div>
+
+<div class="tool-shell">
+
+    <!-- LEFT -->
+
+    <div class="tool-main-card">
+
+        <h2>Watermark PDF</h2>
+
+        <p class="tool-subtext">
+            Upload your PDF, customize the watermark, then download the new PDF.
+        </p>
+
+        <label class="field-label">PDF File</label>
+        <input
+            type="file"
+            id="fileInput"
+            accept="application/pdf"
+        >
+
+        <label class="field-label">Watermark Text</label>
+        <input
+            type="text"
+            id="textInput"
+            value="CONFIDENTIAL"
+        >
+
+        <label class="field-label">Watermark Color</label>
+        <input
+            type="color"
+            id="colorInput"
+            value="#ff0000"
+        >
+
+        <label class="field-label">Watermark Image</label>
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/png,image/jpeg,image/jpg"
+        >
+
+        <label class="field-label">
+            Font Size
+            <span class="rangeval" id="sizeVal">48</span>
+        </label>
+
+        <input
+            type="range"
+            id="sizeInput"
+            min="8"
+            max="150"
+            value="48"
+        >
+
+        <label class="field-label">
+            Opacity
+            <span class="rangeval" id="opVal">0.30</span>
+        </label>
+
+        <input
+            type="range"
+            id="opInput"
+            min="0"
+            max="100"
+            value="30"
+        >
+
+        <label class="field-label">
+            Rotation
+            <span class="rangeval" id="rotVal">45°</span>
+        </label>
+
+        <input
+            type="range"
+            id="rotInput"
+            min="0"
+            max="360"
+            value="45"
+        >
+
+        <button id="downloadBtn" disabled>
+            Download Watermarked PDF
+        </button>
+
+        <div id="status" class="status"></div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <aside class="tool-preview-card">
+
+        <div class="preview-card-top">
+
+            <h3>Preview</h3>
+
+            <p>
+                The first page is displayed here.
+                The watermark will be applied to every page.
+            </p>
+
+        </div>
+
+        <div class="canvas-wrap">
+
+            <div id="canvasHolder">
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+
+        </div>
+
+        <div class="side-note">
+
+            <h4>How it works</h4>
+
+            <ul>
+                <li>Select a PDF.</li>
+                <li>Add text or upload an image.</li>
+                <li>Adjust size, opacity and rotation.</li>
+                <li>Preview the result.</li>
+                <li>Download the new PDF.</li>
+            </ul>
+
+        </div>
+
+    </aside>
+
+</div>
+
+</div>
+</main>
+
+<div id="footer"></div>
+
+<script src="../common/common.js"></script>
+<script src="../common/loader.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
