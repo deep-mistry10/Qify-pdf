@@ -1,283 +1,288 @@
 /* ==========================
-   Page Setup
+   Page Setup & Typography
 ========================== */
-
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 button,
-input{
-    font-family:inherit;
+input {
+    font-family: inherit;
 }
 
-/* ==========================
-   Page Heading
-========================== */
-
-.tool-page-head{
-    margin-bottom:28px;
+.tool-page-head {
+    margin-bottom: 28px;
 }
 
-.section-kicker{
-    display:inline-block;
-    padding:8px 14px;
-    border:var(--border);
-    box-shadow:var(--shadow-sm);
-    border-radius:999px;
-    background:var(--card);
-    font-weight:900;
-    margin-bottom:14px;
+.section-kicker {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 14px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    font-weight: 900;
 }
 
-.tool-page-head h1{
-    margin:0 0 12px;
-    font-size:clamp(2.2rem,4vw,3.6rem);
-    line-height:1;
+.tool-page-head h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1;
 }
 
-.tool-page-head p{
-    margin:0;
-    font-size:1.05rem;
-    line-height:1.7;
-    max-width:760px;
+.tool-page-head p {
+    margin: 0;
+    max-width: 760px;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* ==========================
    Layout
 ========================== */
-
-.tool-shell{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:24px;
-    align-items:start;
+.tool-shell {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 24px;
+    align-items: start;
 }
 
 .tool-main-card,
-.tool-preview-card{
-    background:var(--card);
-    border:var(--border);
-    box-shadow:var(--shadow);
-    border-radius:28px;
-    padding:28px;
+.tool-preview-card {
+    padding: 28px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+.tool-main-card h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.tool-subtext {
+    margin: 0 0 22px;
+    line-height: 1.7;
 }
 
 /* ==========================
-   Left Card
+   Form Labels & Values
 ========================== */
-
-.tool-main-card h2{
-    margin:0 0 10px;
-    font-size:2rem;
+.field-label,
+.color-label {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px;
+    font-weight: 800;
 }
 
-.tool-subtext{
-    margin:0 0 22px;
-    line-height:1.7;
+.field-label {
+    justify-content: space-between;
 }
 
-.field-label{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-weight:800;
-    margin:0 0 10px;
+.color-label {
+    gap: 8px;
+}
+
+.rangeval {
+    color: var(--blue);
+    font-weight: 900;
 }
 
 /* ==========================
-   Inputs
+   Inputs (Text, File, Color)
 ========================== */
-
 input[type="text"],
 input[type="file"],
-input[type="color"]{
-    width:100%;
-    padding:16px;
-    margin-bottom:18px;
-    border:var(--border);
-    border-radius:16px;
-    background:#fff;
-    color:var(--text);
-    font-size:16px;
-    box-shadow:var(--shadow-sm);
+input[type="color"] {
+    width: 100%;
+    margin-bottom: 18px;
+    background: #fff;
+    border: var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+    font-size: 16px;
+    transition: transform 0.1s, box-shadow 0.1s;
 }
 
+input[type="text"],
+input[type="file"] {
+    padding: 16px;
+}
+
+input[type="color"] {
+    width: 70px;
+    height: 60px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+/* Input Focus States */
 input[type="text"]:focus,
 input[type="file"]:focus,
-input[type="color"]:focus{
-    outline:none;
-    transform:translate(2px,2px);
-    box-shadow:2px 2px 0 #111;
+input[type="color"]:focus {
+    outline: none;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #111;
 }
 
-input[type="file"]{
-    cursor:pointer;
+/* File Button Specifics */
+input[type="file"] {
+    cursor: pointer;
 }
 
-input[type="file"]::file-selector-button{
-    border:var(--border);
-    background:var(--yellow);
-    color:var(--text);
-    padding:10px 16px;
-    margin-right:12px;
-    font-weight:800;
-    cursor:pointer;
-    box-shadow:var(--shadow-sm);
-    border-radius:12px;
+input[type="file"]::file-selector-button {
+    padding: 10px 16px;
+    margin-right: 12px;
+    background: var(--yellow);
+    color: var(--text);
+    border: var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    font-weight: 800;
+    cursor: pointer;
 }
 
-input[type="color"]{
-    height:60px;
-    padding:6px;
-    cursor:pointer;
-}
-
-input[type="range"]{
-    width:100%;
-    margin-bottom:22px;
-    cursor:pointer;
-}
-
-.rangeval{
-    font-weight:900;
-    color:var(--blue);
+/* Range Slider */
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 22px;
+    cursor: pointer;
 }
 
 /* ==========================
-   Button
+   Action Button
 ========================== */
-
-#downloadBtn{
-    width:100%;
-    min-height:58px;
-    padding:16px;
-    border:var(--border);
-    border-radius:16px;
-    background:var(--green);
-    color:#111;
-    font-size:16px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:var(--shadow-sm);
-    transition:.15s;
+#downloadBtn {
+    width: 100%;
+    min-height: 58px;
+    padding: 16px;
+    background: var(--green);
+    color: #111;
+    border: var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
-#downloadBtn:hover:not(:disabled){
-    transform:translate(4px,4px);
+#downloadBtn:hover:not(:disabled) {
+    transform: translate(4px, 4px);
 }
 
-#downloadBtn:active:not(:disabled){
-    transform:translate(6px,6px);
+#downloadBtn:active:not(:disabled) {
+    transform: translate(6px, 6px);
 }
 
-#downloadBtn:disabled{
-    opacity:.55;
-    cursor:not-allowed;
-    transform:none;
+#downloadBtn:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* ==========================
-   Status
+   Status Message
 ========================== */
+.status {
+    margin-top: 20px;
+    min-height: 24px;
+    padding: 16px;
+    background: #dff4ff;
+    border: var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.7;
+    word-break: break-word;
+}
 
-.status{
-    margin-top:20px;
-    min-height:24px;
-    padding:16px;
-    border-radius:18px;
-    border:var(--border);
-    background:#dff4ff;
-    box-shadow:var(--shadow-sm);
-    line-height:1.7;
-    word-break:break-word;
+/* Hides the blue box when there's no message */
+.status:empty {
+    display: none;
 }
 
 /* ==========================
-   Preview
+   Preview Canvas
 ========================== */
-
-.preview-card-top h3{
-    margin:0 0 8px;
-    font-size:1.5rem;
+.preview-card-top h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
 }
 
-.preview-card-top p{
-    margin:0 0 18px;
-    line-height:1.7;
+.preview-card-top p {
+    margin: 0 0 18px;
+    line-height: 1.7;
 }
 
-.canvas-wrap{
-    background:var(--bg-alt);
-    border:var(--border);
-    box-shadow:var(--shadow-sm);
-    border-radius:20px;
-    padding:18px;
-    margin-bottom:18px;
+.canvas-wrap {
+    padding: 18px;
+    margin-bottom: 18px;
+    background: var(--bg-alt);
+    border: var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
 }
 
-#canvasHolder{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+#canvasHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#pdfCanvas{
-    display:block;
-    width:100%;
-    height:auto;
-    background:#fff;
-    border:var(--border);
-    border-radius:18px;
-    box-shadow:var(--shadow-sm);
-    min-height:220px;
+#pdfCanvas {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    height: auto;
+    background: #fff;
+    border: var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
 }
 
 /* ==========================
-   Side Note
+   Side Note (How it works)
 ========================== */
-
-.side-note{
-    background:var(--yellow);
-    border:var(--border);
-    box-shadow:var(--shadow-sm);
-    border-radius:20px;
-    padding:18px;
+.side-note {
+    padding: 18px;
+    background: var(--yellow);
+    border: var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
 }
 
-.side-note h4{
-    margin:0 0 12px;
-    font-size:1.1rem;
+.side-note h4 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
 }
 
-.side-note ul{
-    margin:0;
-    padding-left:18px;
-    line-height:1.8;
-    font-weight:700;
+.side-note ul {
+    margin: 0;
+    padding-left: 18px;
+    font-weight: 700;
+    line-height: 1.8;
 }
 
 /* ==========================
    Responsive
 ========================== */
-
-@media (max-width:1100px){
-
-.tool-shell{
-    grid-template-columns:1fr;
+@media (max-width: 1100px) {
+    .tool-shell {
+        grid-template-columns: 1fr;
+    }
 }
 
-}
-
-@media (max-width:600px){
-
-.tool-main-card,
-.tool-preview-card{
-    padding:20px;
-}
-
-.tool-page-head h1{
-    font-size:2.3rem;
-}
-
+@media (max-width: 600px) {
+    .tool-main-card,
+    .tool-preview-card {
+        padding: 20px;
+    }
+    
+    .tool-page-head h1 {
+        font-size: 2.3rem;
+    }
 }

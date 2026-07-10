@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Watermark</title>
+<title>Watermark-PDF</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -25,7 +25,7 @@
 <div class="tool-page-head">
     <span class="section-kicker">PDF Tool</span>
 
-    <h1>PDF Watermark</h1>
+    <h1>Watermark PDF</h1>
 
     <p>
         Add text or image watermarks directly in your browser.
@@ -34,8 +34,6 @@
 </div>
 
 <div class="tool-shell">
-
-    <!-- LEFT -->
 
     <div class="tool-main-card">
 
@@ -59,11 +57,12 @@
             value="CONFIDENTIAL"
         >
 
-        <label class="field-label">Watermark Color</label>
+        <label class="color-label">Watermark Color</label>
         <input
+            class="color-btn"
             type="color"
             id="colorInput"
-            value="#ff0000"
+            value="#kkkkkk"
         >
 
         <label class="field-label">Watermark Image</label>
@@ -119,8 +118,6 @@
         <div id="status" class="status"></div>
 
     </div>
-
-    <!-- RIGHT -->
 
     <aside class="tool-preview-card">
 
