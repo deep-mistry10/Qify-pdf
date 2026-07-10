@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>PDF Crop - Qify</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../common/layout.css">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div id="header"></div>
+<div class="tool-page-head">
+  <div class="section-kicker">PDF Tools</div>
+  <h1>Crop PDF Pages</h1>
+  <p>Trim margins and resize your PDF pages locally. Nothing is uploaded to any server.</p>
+</div>
+
+<div id="app">
+
+  <div id="dropzone" class="tool-shell">
+    <div class="tool-main-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+      <h2>Upload Document</h2>
+      <div class="quality-box">
+        <input type="file" id="fileInput" accept="application/pdf" hidden>
+        <button id="chooseBtn" class="primary" style="margin-bottom: 15px;">Choose PDF</button>
+        <p style="font-weight: 700; opacity: 0.7; margin: 0;">or drag &amp; drop a PDF file here</p>
+      </div>
+      <div id="status"></div>
+    </div>
+  </div>
+
+  <div id="editor" class="tool-shell hidden">
+    
+    <div class="tool-main-card">
+      <h2>Crop Settings</h2>
+      <p class="tool-subtext">Adjust the crop box on the preview to trim unwanted margins.</p>
+      
+      <label class="side-note">
+        <input type="checkbox" id="applyAllChk" checked>
+        Apply to all pages
+      </label>
+
+      <div class="page-nav">
+        <button id="prevBtn">‹ Prev</button>
+        <span id="pageIndicator">1 / 1</span>
+        <button id="nextBtn">Next ›</button>
+      </div>
+
+      <div class="buttons">
+        <button id="resetBtn">Reset Box</button>
+        <button id="newBtn">Start Over</button>
+      </div>
+
+      <div class="buttons">
+        <button id="cropBtn" class="primary">Crop &amp; Download</button>
+      </div>
+    </div>
+
+    <div class="tool-preview-card">
+      <div class="preview-card-top">
+        <h3>Live Preview</h3>
+        <p>Drag the highlighted area or edges to adjust.</p>
+      </div>
+      
+      <div class="canvas-wrap" id="canvasWrap">
+        <div class="canvas-inner" id="canvasInner">
+          <canvas id="pageCanvas"></canvas>
+          <div class="crop-box" id="cropBox">
+            <div class="handle h-nw" data-h="nw"></div>
+            <div class="handle h-n" data-h="n"></div>
+            <div class="handle h-ne" data-h="ne"></div>
+            <div class="handle h-e" data-h="e"></div>
+            <div class="handle h-se" data-h="se"></div>
+            <div class="handle h-s" data-h="s"></div>
+            <div class="handle h-sw" data-h="sw"></div>
+            <div class="handle h-w" data-h="w"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+    <div id="footer"></div>
+    <script src="../common/common.js"></script>
+    <script src="../common/loader.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
