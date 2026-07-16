@@ -57,6 +57,7 @@
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.18s ease;
+  display: none;             /*////////////////chaneg this to show the quich chose //////////*/
 }
 
 .filter-btn:hover {
